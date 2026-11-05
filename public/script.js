@@ -15,12 +15,12 @@ document.addEventListener('DOMContentLoaded',()=>{
     if(window.matchMedia('(max-width:900px)').matches){e.preventDefault();dd.classList.toggle('open')}
   });
 
-  // Motion language: headings rise into view; body copy fades in; visual objects use a light rise.
-  // The Home hero's main headline is intentionally immediate and never animated.
+  // Site-wide motion language: large headings rise; supporting copy fades.
+  // HOME's ENJOY EVERY BITE / NOURISH YOUR LIFE headline is intentionally immediate.
   const titleTargets=[...document.querySelectorAll('main h1, main h2, main h3, main h4')]
     .filter(el=>!el.matches('.home-hero h1'));
   const bodyTargets=[...document.querySelectorAll('main p, main li, main .meta, main .eyebrow, main .filter, main label, main .kicker')];
-  const objectTargets=[...document.querySelectorAll('main .btn, main .product-card, main .value-card, main .inside-card, main .product-detail, main .what-card, main figure, main .quality-box img, main .story-image, main .vision > img, main .about-who > img, main .map-frame')];
+  const objectTargets=[...document.querySelectorAll('main .btn, main .product-card, main .value-card, main .inside-card, main .product-detail, main .what-card, main figure, main .quality-box img, main .vision > img, main .about-who > img, main .map-frame')];
 
   titleTargets.forEach(el=>el.classList.add('reveal-title'));
   bodyTargets.forEach(el=>el.classList.add('reveal-body'));
@@ -29,13 +29,10 @@ document.addEventListener('DOMContentLoaded',()=>{
   const allTargets=[...new Set([...titleTargets,...bodyTargets,...objectTargets])];
   if('IntersectionObserver' in window){
     const obs=new IntersectionObserver(entries=>entries.forEach(en=>{
-      if(en.isIntersecting){
-        en.target.classList.add('is-visible');
-        obs.unobserve(en.target);
-      }
-    }),{threshold:.08,rootMargin:'0px 0px -3% 0px'});
+      if(en.isIntersecting){ en.target.classList.add('is-visible'); obs.unobserve(en.target); }
+    }),{threshold:.06,rootMargin:'0px 0px -2% 0px'});
     allTargets.forEach(el=>obs.observe(el));
-  }else allTargets.forEach(el=>el.classList.add('is-visible'));
+  } else allTargets.forEach(el=>el.classList.add('is-visible'));
 
   const filters=document.querySelectorAll('.filter');
   filters.forEach(btn=>btn.addEventListener('click',()=>{
@@ -46,12 +43,32 @@ document.addEventListener('DOMContentLoaded',()=>{
   }));
 
   const form=document.querySelector('#enquiry-form');
-  if(form) form.addEventListener('submit',e=>{
-    e.preventDefault();
-    if(!form.checkValidity()){form.reportValidity();return}
-    const d=new FormData(form);
-    const subject=encodeURIComponent(d.get('subject')||'Business Enquiry');
-    const body=encodeURIComponent(`Full name: ${d.get('name')}\nEmail: ${d.get('email')}\nCompany: ${d.get('company')||'-'}\nPhone: ${d.get('phone')}\n\n${d.get('message')}`);
-    location.href=`mailto:agrowth.adm@gmail.com?subject=${subject}&body=${body}`;
-  });
+  if(form){
+    const button=form.querySelector('.submit');
+    const status=document.querySelector('#form-status');
+    form.addEventListener('submit',async e=>{
+      e.preventDefault();
+      if(!form.checkValidity()){form.reportValidity();return}
+      button.disabled=true; button.textContent='Submitting...';
+      status.className='form-status'; status.textContent='';
+      const data=Object.fromEntries(new FormData(form).entries());
+      try{
+        const res=await fetch('/api/enquiry',{
+          method:'POST',
+          headers:{'Content-Type':'application/json','Accept':'application/json'},
+          body:JSON.stringify(data)
+        });
+        const payload=await res.json().catch(()=>({}));
+        if(!res.ok||!payload.success) throw new Error(payload.error||'Submission failed');
+        form.reset();
+        status.classList.add('success');
+        status.innerHTML='<strong>Thank you. Your enquiry has been submitted.</strong><br>Our team will get back to you shortly.';
+      }catch(err){
+        status.classList.add('error');
+        status.textContent='Something went wrong. Please try again or email agrowth.adm@gmail.com.';
+      }finally{
+        button.disabled=false; button.textContent='Submit';
+      }
+    });
+  }
 });
