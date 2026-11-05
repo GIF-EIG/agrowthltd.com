@@ -1,16 +1,15 @@
 # AGrowth website
 
-Static AGrowth website for Cloudflare Workers Static Assets.
+Production static website for AGrowth Ltd, deployed with Cloudflare Workers Static Assets.
 
 ## Deployment
-Cloudflare is connected to this GitHub repository. Updating the `main` branch triggers the configured deployment. The deploy command is `npx wrangler deploy`.
+Cloudflare is connected to the GitHub repository. Push/commit updates to the connected `main` branch; Cloudflare then runs `npx wrangler deploy`.
 
-## Structure
-- `public/` website files
-- `wrangler.jsonc` Cloudflare configuration
+## Repository root
+Keep these items at the repository root:
+- `public/`
+- `wrangler.jsonc`
+- `package.json`
+- `README.md`
 
-## Local preview
-```bash
-npm install
-npm run dev
-```
+The website itself is inside `public/`.
