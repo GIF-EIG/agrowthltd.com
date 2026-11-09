@@ -25,3 +25,7 @@ The form posts to `/api/enquiry` and the Worker sends the enquiry to `agrowth.ad
 In Cloudflare, enable **Email Service → Send emails**, onboard `agrowth.rw` as a sending domain, and verify the required DNS records. The Worker sends from `website@agrowth.rw`. Also ensure `agrowth.adm@gmail.com` is an allowed/verified destination for the Email binding. Once Email Service is active, no API key is required in the front-end.
 
 If Email Service is not configured, the website remains available but the form will display an error instead of pretending the enquiry was sent.
+
+
+## Final V4 update
+Includes the November 9, 2026 layout, animation, typography, image, footer, and enquiry-form refinements requested for the AGrowth site.
