@@ -1,11 +1,5 @@
-# AGrowth website – latest Cloudflare deployment package
+# AGrowth website – V7
 
-Updated with the latest requested layout, content, animation, product-card, vision-image, address and footer refinements.
+Latest consolidated build reflecting the November 9, 2026 revisions.
 
-Upload/overwrite these items at the GitHub repository root:
-- `public/`
-- `src/`
-- `package.json`
-- `wrangler.jsonc`
-
-Cloudflare production branch: `main`.
+Deploy the repository root contents (`public/`, `src/`, `package.json`, `wrangler.jsonc`) to the existing GitHub/Cloudflare project.
