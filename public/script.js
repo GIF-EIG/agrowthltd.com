@@ -15,24 +15,30 @@ document.addEventListener('DOMContentLoaded',()=>{
     if(window.matchMedia('(max-width:900px)').matches){e.preventDefault();dd.classList.toggle('open')}
   });
 
-  // Site-wide motion language: large headings rise; supporting copy fades.
-  // HOME's ENJOY EVERY BITE / NOURISH YOUR LIFE headline is intentionally immediate.
-  const titleTargets=[...document.querySelectorAll('main h1, main h2, main h3, main h4')]
-    .filter(el=>!el.matches('.home-hero h1'));
-  const bodyTargets=[...document.querySelectorAll('main p, main li, main .meta, main .eyebrow, main .filter, main label, main .kicker')];
-  const objectTargets=[...document.querySelectorAll('main .btn, main .product-card, main .value-card, main .inside-card, main .product-detail, main .what-card, main figure, main .quality-box img, main .vision > img, main .about-who > img, main .map-frame')];
+  const allHeadings=[...document.querySelectorAll('main h1, main h2, main h3, main h4')]
+    .filter(el=>!el.matches('.home-hero h1, .product-intro h2'));
+  const fadeCopy=[...document.querySelectorAll(
+    'main p, main li, main .meta, main .eyebrow, main .filter, main label, main .kicker, main .btn, main .product-intro h2'
+  )];
+  const cardObjects=[...document.querySelectorAll(
+    'main .product-card, main .value-card, main .inside-card, main .product-detail, main .what-card'
+  )];
 
-  titleTargets.forEach(el=>el.classList.add('reveal-title'));
-  bodyTargets.forEach(el=>el.classList.add('reveal-body'));
-  objectTargets.forEach(el=>el.classList.add('reveal-object'));
+  allHeadings.forEach(el=>el.classList.add('reveal-title'));
+  fadeCopy.forEach(el=>el.classList.add('reveal-body'));
+  cardObjects.forEach(el=>el.classList.add('reveal-object'));
+  document.querySelector('.home-hero h1')?.classList.add('is-visible','hero-static');
 
-  const allTargets=[...new Set([...titleTargets,...bodyTargets,...objectTargets])];
+  const targets=[...new Set([...allHeadings,...fadeCopy,...cardObjects])];
   if('IntersectionObserver' in window){
     const obs=new IntersectionObserver(entries=>entries.forEach(en=>{
-      if(en.isIntersecting){ en.target.classList.add('is-visible'); obs.unobserve(en.target); }
+      if(en.isIntersecting){
+        en.target.classList.add('is-visible');
+        obs.unobserve(en.target);
+      }
     }),{threshold:.06,rootMargin:'0px 0px -2% 0px'});
-    allTargets.forEach(el=>obs.observe(el));
-  } else allTargets.forEach(el=>el.classList.add('is-visible'));
+    targets.forEach(el=>obs.observe(el));
+  } else targets.forEach(el=>el.classList.add('is-visible'));
 
   const filters=document.querySelectorAll('.filter');
   filters.forEach(btn=>btn.addEventListener('click',()=>{
