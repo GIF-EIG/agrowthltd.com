@@ -17,27 +17,17 @@ document.addEventListener('DOMContentLoaded',()=>{
 
   const isStory=!!document.querySelector('.article-page');
   if(!isStory){
-    const entryMap={
-      home:{title:[],copy:['.home-hero .kicker','.home-hero p','.home-hero .btn']},
-      about:{title:['.about-hero-title'],copy:['.about-hero-copy']},
-      business:{title:['.business-hero-title'],copy:['.business-hero-copy']},
-      inside:{title:['.inside-hero-title'],copy:['.inside-hero-copy','.inside-intro .filter']},
-      contact:{title:['.contact-hero-title'],copy:['.contact-hero-copy']}
-    };
-    if(location.pathname.endsWith('/product.html')||location.pathname.endsWith('product.html')){
-      entryMap.business={title:['.product-hero-title'],copy:['.product-hero-copy']};
-    }
-    const entry=entryMap[current]||{title:[],copy:[]};
-    const entryEls=[];
-    entry.title.forEach(sel=>document.querySelectorAll(sel).forEach(el=>{el.classList.add('entry-title');entryEls.push(el)}));
-    entry.copy.forEach(sel=>document.querySelectorAll(sel).forEach(el=>{el.classList.add('entry-copy');entryEls.push(el)}));
+    const entryEls=[...document.querySelectorAll('.entry-title,.entry-copy')];
     document.querySelector('.home-hero h1')?.classList.add('hero-static');
-    requestAnimationFrame(()=>setTimeout(()=>entryEls.forEach(el=>el.classList.add('entry-visible')),80));
+    // Delay the first-view reveal slightly so the animation is clearly visible after navigation.
+    requestAnimationFrame(()=>requestAnimationFrame(()=>setTimeout(()=>{
+      entryEls.forEach(el=>el.classList.add('entry-visible'));
+    },220)));
 
     const allHeadings=[...document.querySelectorAll('main h1, main h2, main h3, main h4')]
-      .filter(el=>!el.matches('.home-hero h1, .product-intro h2')&&!entryEls.includes(el));
+      .filter(el=>!el.matches('.home-hero h1')&&!entryEls.includes(el));
     const fadeCopy=[...document.querySelectorAll(
-      'main p, main li, main .meta, main .eyebrow, main .filter, main label, main .kicker, main .btn, main .product-intro h2'
+      'main p, main li, main .meta, main .eyebrow, main .filter, main label, main .kicker, main .btn'
     )].filter(el=>!entryEls.includes(el));
     const cardObjects=[...document.querySelectorAll(
       'main .product-card, main .value-card, main .inside-card, main .product-detail, main .what-card'
