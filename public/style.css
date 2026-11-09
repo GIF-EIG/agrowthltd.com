@@ -649,3 +649,60 @@
 @media(min-width:1180px){.business-product-note-v4 p{white-space:nowrap!important}}
 @media(max-width:1179px){.business-product-note-v4 p{white-space:normal!important}}
 .vision>img{aspect-ratio:941/1149!important}
+
+/* ===== V8 final Our Business card refinement ===== */
+/* Keep the three-column card layout, but make each card read as two compact centered information groups. */
+.business-products .business-detail-card{
+  grid-template-rows:auto 300px auto auto!important;
+  text-align:center!important;
+  padding:0 18px 28px!important;
+}
+.business-products .product-number{
+  text-align:center!important;
+  padding:15px 4px 13px!important;
+}
+.business-products .business-detail-card>img{
+  margin:0 0 27px!important;
+}
+.business-products .business-product-main{
+  min-height:142px!important;
+  padding:0 8px!important;
+  text-align:center!important;
+}
+.business-products .business-detail-card h3{
+  font-size:28px!important;
+  line-height:1.22!important;
+  text-align:center!important;
+  margin:0 0 8px!important;
+}
+.business-products .business-detail-card p.business-detail-copy{
+  font-size:20px!important;
+  line-height:1.48!important;
+  text-align:center!important;
+  margin:0 auto!important;
+  max-width:95%!important;
+}
+.business-products .business-best-block{
+  min-height:132px!important;
+  padding:5px 8px 0!important;
+  text-align:center!important;
+}
+.business-products .business-best-block h4{
+  font-size:22px!important;
+  line-height:1.25!important;
+  margin:0 0 5px!important;
+  text-align:center!important;
+  font-weight:800!important;
+}
+.business-products .business-best-copy{
+  font-size:18px!important;
+  line-height:1.42!important;
+  margin:0 auto!important;
+  text-align:center!important;
+}
+/* Packaging remains available in the dedicated Product page, but is intentionally omitted from Our Business cards. */
+.business-products .business-pack-block{display:none!important}
+
+@media(max-width:1180px){
+  .business-products .business-product-main,.business-products .business-best-block{min-height:0!important}
+}
