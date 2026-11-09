@@ -338,3 +338,137 @@
   .inside-intro p.inside-hero-copy,.contact-intro p.contact-hero-copy{font-size:20px}
   .inside-card p.inside-card-copy-v4{font-size:17px}
 }
+
+/* ===== V5 consolidated refinements (2026-11-09) ===== */
+/* First-view entry animation: visible even when the first block is already in the viewport. */
+.entry-title{opacity:0;transform:translateY(32px);transition:opacity .8s ease .18s,transform .8s cubic-bezier(.2,.75,.2,1) .18s}
+.entry-copy{opacity:0;transition:opacity .9s ease .38s}
+.entry-title.entry-visible,.entry-copy.entry-visible{opacity:1;transform:none}
+.home-hero .hero-static{opacity:1!important;transform:none!important}
+.article-page .reveal-title,.article-page .reveal-body,.article-page .reveal-object{opacity:1!important;transform:none!important;transition:none!important}
+
+/* Home: product range and package pills */
+.home-products-grid .product-card h3{min-height:54px;display:flex;align-items:center;justify-content:center}
+.packaging-pills{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+.packaging-pills span{display:inline-flex;align-items:center;justify-content:center;min-width:78px;padding:9px 18px;border-radius:999px;background:#edf2df;color:var(--green);font-weight:700;font-size:17px;line-height:1}
+.packaging-pills.compact{justify-content:center;margin:14px 0 20px}
+.packaging-pills.compact span{min-width:68px;padding:8px 15px;font-size:15px}
+.products-section .product-card{min-height:620px}
+.products-section .product-card p.home-product-copy{min-height:62px}
+.products-section .home-products-lead{max-width:1000px!important}
+
+/* Home story: balanced whitespace, fully rounded gold card. */
+.story-wrap{align-items:start}
+.story-card{margin-top:58px;margin-bottom:58px;border-radius:24px;padding-top:56px;padding-bottom:54px;min-height:calc(760px - 116px);position:relative}
+.story-card .eyebrow{margin-top:4px;margin-bottom:0}
+.story-card h2{margin-top:46px}
+.story-cta{margin-top:auto;align-self:flex-start}
+
+/* Home quality CTA fixed three-line composition. */
+.quality-cta p{max-width:1500px}
+
+/* About: Who We Are side padding and updated image fit. */
+.about-who{padding-left:68px;padding-right:68px}
+.about-who>div{padding-left:0}
+.about-who img{margin-right:0;height:650px;object-fit:cover;object-position:center 38%}
+
+/* About mission and values. */
+.mission-box p{margin-left:auto;margin-right:auto}
+.values-v4 .value-card p{text-align:center!important}
+
+/* About vision: crop section vertically while keeping family + NURIRA focal content. */
+.vision-band{overflow:hidden}
+.vision{min-height:500px;max-height:540px}
+.vision>img{height:540px!important;min-height:0!important;object-fit:cover!important;object-position:center 48%!important;background:transparent!important}
+.vision>div{padding:48px 64px}
+.vision h2{font-size:46px}
+.vision p{font-size:20px;line-height:1.55}
+.vision strong{font-size:17px;margin-top:22px}
+.gold-line{margin:14px 0 24px}
+
+/* Business hero exact line control. */
+.business-hero-copy .hero-line{display:block}
+@media(min-width:1180px){.business-hero-copy .hero-line{white-space:nowrap}}
+
+/* Business product copy: balanced line breaks and larger body text. */
+.business-products-title p{max-width:1440px}
+.business-products .product-card p{font-size:20px;line-height:1.52}
+.business-products .product-card h4{font-size:24px}
+.business-product-note-v4{max-width:1500px}
+
+/* Benefits: stronger left inset and vertically balanced right card. */
+.benefits-v4{padding-left:104px;padding-right:58px;align-items:stretch}
+.benefits-v4>div{padding-top:4px}
+.benefits-v4 .side-box{display:grid;grid-template-rows:1fr auto 1fr;align-items:center;min-height:100%;padding-top:52px;padding-bottom:52px}
+.benefits-v4 .side-box hr{width:100%;margin:24px 0}
+.benefits-v4 .side-box h3{margin-top:0;margin-bottom:20px}
+.benefits-v4 .side-box p{margin:0}
+.benefits-v4 .side-box h3:nth-of-type(2){margin-top:0}
+
+/* Product page: three cards in one row on desktop. */
+.product-container{max-width:1560px}
+.product-container>h2{font-size:42px;margin-bottom:48px}
+.product-details-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;align-items:stretch}
+.product-detail{margin:0;padding:20px 22px 28px;display:flex;flex-direction:column;height:100%}
+.product-detail h3{font-size:24px;margin-bottom:14px}
+.product-detail img{height:340px;width:100%;object-fit:contain;background:#fff;border-radius:12px}
+.product-detail-copy{display:flex;flex-direction:column;flex:1}
+.product-detail h4{font-size:25px;line-height:1.2;margin:20px 0 9px}
+.product-detail p,.product-detail li{font-size:19.5px;line-height:1.52}
+.product-detail ul{padding-left:24px;margin:0}
+.product-detail .packaging-pills{margin-top:auto;padding-top:8px}
+.product-detail .packaging-pills span{font-size:17px;min-width:76px}
+
+/* Product What We Do body enlargement. */
+.what-card p{font-size:19.5px;line-height:1.55}
+
+/* Inside stories: larger card descriptions already requested. */
+.inside-card-copy-v4{font-size:22px!important}
+
+/* Contact: official address. */
+.contact-item{line-height:1.55}
+
+/* Footer: symmetric page-edge padding and aligned LinkedIn/copyright column. */
+.footer .container{width:calc(100% - 144px);max-width:none}
+.footer-inner{grid-template-columns:minmax(0,1fr) 390px;gap:72px;align-items:stretch}
+.footer-contact{display:flex;flex-direction:column;align-items:flex-start}
+.footer-lines{font-size:18px;line-height:1.55}
+.footer-row{display:grid;grid-template-columns:max-content 1fr;column-gap:8px;align-items:start}
+.footer-label{font-weight:500;white-space:nowrap}
+.footer-value{min-width:0}
+.footer-value a{text-decoration:underline;text-underline-offset:3px}
+.footer-right{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;padding:0;margin:0}
+.footer-right .linkedin-link,.footer-right .copyright{margin-left:0}
+.footer-right .copyright{margin-top:auto}
+
+@media(max-width:1180px){
+  .product-details-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .benefits-v4{padding-left:40px;padding-right:40px}
+  .about-who{padding-left:28px;padding-right:28px}
+  .footer .container{width:calc(100% - 80px)}
+}
+@media(max-width:900px){
+  .story-card{margin:0;border-radius:22px;min-height:0}
+  .vision{max-height:none;min-height:0}
+  .vision>img{height:auto!important;max-height:620px;object-fit:cover!important}
+  .benefits-v4{padding-left:0;padding-right:0}
+  .product-details-grid{grid-template-columns:1fr}
+  .product-detail img{height:420px}
+  .footer .container{width:calc(100% - 48px)}
+  .footer-inner{grid-template-columns:1fr}
+  .footer-right{gap:30px}
+  .footer-right .copyright{margin-top:0}
+}
+@media(max-width:560px){
+  .about-who{padding-left:0;padding-right:0}
+  .footer .container{width:calc(100% - 32px)}
+  .footer-row{grid-template-columns:1fr}
+  .footer-label{margin-bottom:2px}
+  .footer-value{padding-left:0}
+  .product-detail p,.product-detail li,.what-card p{font-size:16px}
+  .product-detail img{height:320px}
+  .packaging-pills span{min-width:64px;font-size:15px;padding:8px 12px}
+}
+.story-cta{margin-top:auto;margin-bottom:auto}
+.benefits-v4 .side-box{display:flex;flex-direction:column;justify-content:space-between}
+.benefits-v4 .side-box hr{flex:0 0 auto}
