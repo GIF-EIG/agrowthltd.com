@@ -541,3 +541,111 @@
 @media (prefers-reduced-motion:reduce){
   .entry-title,.entry-copy,.reveal-title,.reveal-body,.reveal-object{opacity:1!important;transform:none!important;transition:none!important}
 }
+
+
+/* ===== V7 final requested refinements (2026-11-09) ===== */
+/* First block animations: always visible on page entry; story detail pages remain static. */
+.js .entry-title{opacity:0!important;transform:translateY(32px)!important;transition:opacity .82s ease,transform .82s cubic-bezier(.2,.75,.2,1)!important;will-change:opacity,transform}
+.js .entry-copy{opacity:0!important;transition:opacity .9s ease!important;will-change:opacity}
+.js .entry-title.entry-visible{opacity:1!important;transform:translateY(0)!important}
+.js .entry-copy.entry-visible{opacity:1!important}
+.home-hero .hero-static{opacity:1!important;transform:none!important;transition:none!important}
+.article-page .entry-title,.article-page .entry-copy,.article-page .reveal-title,.article-page .reveal-body,.article-page .reveal-object{opacity:1!important;transform:none!important;transition:none!important}
+@media (prefers-reduced-motion:reduce){
+  .reveal-title,.reveal-body,.reveal-object{opacity:1!important;transform:none!important;transition:none!important}
+  .js .entry-title{opacity:0!important;transform:none!important;transition:opacity .55s ease!important}
+  .js .entry-copy{opacity:0!important;transition:opacity .65s ease!important}
+  .js .entry-title.entry-visible,.js .entry-copy.entry-visible{opacity:1!important}
+}
+
+/* Home product cards: tighter title/copy grouping, larger package chips and CTA label. */
+.products-section .product-card h3{margin:12px 0 2px!important;min-height:0!important}
+.products-section .product-card p.home-product-copy{margin:0 auto 8px!important;min-height:50px!important}
+.products-section .packaging-pills.compact{margin:8px 0 13px!important;gap:11px!important}
+.products-section .packaging-pills.compact span{font-size:20px!important;min-width:78px!important;padding:10px 17px!important}
+.products-section .product-card .btn{font-size:19px!important;min-height:52px!important}
+
+/* Our Vision: exact user-supplied portrait, never crop, and never clip right-side copy. */
+.vision-band{overflow:visible!important;padding:0!important}
+.vision{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:0!important;align-items:stretch!important;min-height:0!important;max-height:none!important}
+.vision>img{display:block!important;width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;object-fit:contain!important;object-position:center!important;align-self:start!important;background:transparent!important}
+.vision>div{display:flex!important;flex-direction:column!important;justify-content:center!important;align-self:stretch!important;padding:64px 66px!important;overflow:visible!important}
+.vision h2{font-size:48px!important}
+.vision p{font-size:20px!important;line-height:1.58!important;margin:0!important}
+.vision strong{font-size:17px!important;margin-top:24px!important}
+.vision .gold-line{margin:16px 0 26px!important}
+
+/* Business product intro: separate the two sentences for easier reading. */
+.business-products-title{margin-bottom:46px!important}
+.business-products-intro{display:flex;flex-direction:column;gap:14px;align-items:center}
+.business-products-intro p{font-size:27px!important;line-height:1.5!important;margin:0!important;max-width:1440px!important}
+
+/* Business product cards: exact order, compact groups, aligned sub-sections. */
+.business-products{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:28px!important;align-items:stretch!important;margin-top:0!important;max-width:1420px!important}
+.business-products .business-detail-card{background:#f0efeb!important;border:1px solid #ccd2cc!important;border-radius:16px!important;padding:0 18px 24px!important;overflow:hidden!important;display:grid!important;grid-template-rows:auto 300px auto auto auto!important;align-content:start!important;text-align:left!important;height:100%!important}
+.business-products .product-number{font-size:18px!important;font-weight:800!important;padding:15px 4px 13px!important;color:var(--green)!important}
+.business-products .business-detail-card>img{width:100%!important;height:300px!important;object-fit:contain!important;background:#fff!important;border-radius:10px!important;margin:0 0 15px!important}
+.business-products .business-product-main{min-height:218px!important;padding:0 4px!important}
+.business-products .business-detail-card h3{font-size:25px!important;line-height:1.22!important;text-align:left!important;margin:0 0 5px!important;min-height:0!important;display:block!important}
+.business-products .business-detail-card p.business-detail-copy{font-size:18px!important;line-height:1.5!important;text-align:left!important;margin:0!important;min-height:0!important}
+.business-products .business-best-block{min-height:142px!important;padding:8px 4px 0!important}
+.business-products .business-best-block h4{font-size:18px!important;line-height:1.25!important;margin:0 0 4px!important;text-align:left!important}
+.business-products .business-best-copy{font-size:17px!important;line-height:1.48!important;margin:0!important;text-align:left!important}
+.business-products .business-pack-block{padding:8px 4px 0!important}
+.business-products .business-pack-block h4{font-size:20px!important;line-height:1.25!important;margin:0 0 8px!important;text-align:left!important}
+.business-products .business-packaging{margin:0!important;gap:9px!important}
+.business-products .business-packaging span{font-size:18px!important;min-width:72px!important;padding:9px 14px!important;background:#e8efd7!important}
+
+/* Keep the two notes visually attached to the three cards without crowding them. */
+.business-product-note-v4{display:flex!important;flex-direction:column!important;gap:10px!important;margin:46px auto 0!important;max-width:none!important;text-align:center!important}
+.business-product-note-v4 p{font-size:27px!important;line-height:1.5!important;margin:0!important;font-weight:500!important}
+@media(min-width:1500px){.business-product-note-v4 p{white-space:nowrap}}
+
+/* Product Details: synchronize Best for and Available packaging rows across all three cards. */
+.product-details-grid{align-items:stretch!important}
+.product-detail{display:flex!important;flex-direction:column!important;height:100%!important}
+.product-detail-copy{display:flex!important;flex-direction:column!important;flex:1!important}
+.product-detail .detail-main{min-height:252px!important}
+.product-detail .detail-best{min-height:220px!important}
+.product-detail .detail-pack{margin-top:auto!important}
+.product-detail .detail-main h4,.product-detail .detail-best h4,.product-detail .detail-pack h4{margin-top:18px!important}
+.product-detail .detail-main h4{margin-bottom:8px!important}
+.product-detail .detail-best h4{margin-bottom:8px!important}
+.product-detail .detail-pack h4{margin-bottom:10px!important}
+
+/* Footer right column: same page-edge inset as the left logo/address block. */
+.footer .container{width:calc(100% - 144px)!important;max-width:none!important}
+.footer-inner{width:100%!important;grid-template-columns:minmax(0,1fr) max-content!important;gap:72px!important}
+.footer-right{justify-self:end!important;align-items:flex-start!important;width:max-content!important;min-width:0!important;margin:0!important;padding:0!important;text-align:left!important}
+.footer-right .linkedin-link,.footer-right .copyright{margin-left:0!important}
+.footer-right .copyright{text-align:left!important;margin-top:auto!important}
+
+@media(max-width:1180px){
+  .business-products{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .business-product-note-v4 p{font-size:22px!important;white-space:normal!important}
+  .product-detail .detail-main,.product-detail .detail-best{min-height:0!important}
+}
+@media(max-width:900px){
+  .vision{grid-template-columns:1fr!important}
+  .vision>img{width:100%!important;height:auto!important;object-fit:contain!important}
+  .vision>div{padding:48px 28px!important}
+  .business-products{grid-template-columns:1fr!important}
+  .business-products .business-product-main,.business-products .business-best-block{min-height:0!important}
+  .business-products-intro p{font-size:19px!important}
+  .business-product-note-v4{margin-top:34px!important}
+  .business-product-note-v4 p{font-size:19px!important}
+  .footer .container{width:calc(100% - 32px)!important}
+  .footer-inner{display:flex!important;flex-direction:column!important;gap:38px!important}
+  .footer-right{width:auto!important;align-items:flex-start!important}
+}
+
+/* V7 micro-adjustments after final QA. */
+.js .entry-copy{transition:opacity .9s ease .18s!important}
+.product-detail .detail-main{min-height:265px!important}
+.product-detail .detail-best{min-height:250px!important}
+@media(max-width:1180px){.product-detail .detail-main,.product-detail .detail-best{min-height:0!important}}
+/* Keep Business intro and follow-up notes at the same responsive scale. */
+.business-products-intro p,.business-product-note-v4 p{font-size:clamp(18px,1.4vw,27px)!important}
+@media(min-width:1180px){.business-product-note-v4 p{white-space:nowrap!important}}
+@media(max-width:1179px){.business-product-note-v4 p{white-space:normal!important}}
+.vision>img{aspect-ratio:941/1149!important}

@@ -16,14 +16,24 @@ document.addEventListener('DOMContentLoaded',()=>{
   });
 
   const isStory=!!document.querySelector('.article-page');
-  if(!isStory){
-    const entryEls=[...document.querySelectorAll('.entry-title,.entry-copy')];
-    document.querySelector('.home-hero h1')?.classList.add('hero-static');
-    // Delay the first-view reveal slightly so the animation is clearly visible after navigation.
-    requestAnimationFrame(()=>requestAnimationFrame(()=>setTimeout(()=>{
+  const entryEls=[...document.querySelectorAll('.entry-title,.entry-copy')];
+  let entryTimer;
+  const playEntryAnimation=()=>{
+    if(isStory||!entryEls.length)return;
+    clearTimeout(entryTimer);
+    entryEls.forEach(el=>el.classList.remove('entry-visible'));
+    // Force a real hidden frame before the page-entry transition begins.
+    document.documentElement.offsetHeight;
+    entryTimer=setTimeout(()=>{
       entryEls.forEach(el=>el.classList.add('entry-visible'));
-    },220)));
+    },280);
+  };
 
+  document.querySelector('.home-hero h1')?.classList.add('hero-static');
+  playEntryAnimation();
+  window.addEventListener('pageshow',e=>{if(e.persisted)playEntryAnimation()});
+
+  if(!isStory){
     const allHeadings=[...document.querySelectorAll('main h1, main h2, main h3, main h4')]
       .filter(el=>!el.matches('.home-hero h1')&&!entryEls.includes(el));
     const fadeCopy=[...document.querySelectorAll(
