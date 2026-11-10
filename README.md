@@ -17,3 +17,10 @@ V8: Final Our Business card refinement; cache-bust query updated to v=8.
 
 
 V10 update: final product-card centering/alignment, revised Best for copy, shortened fortified description, mission icon position, field headings, and image/title spacing.
+
+## V11 refinements
+- Increased the image-to-product-name spacing on the Our Business product cards.
+- Tightened Product Details spacing between the title/description, Best for/list, and Available packaging/size pills.
+- Removed bullet markers from all Product Details Best for lists while keeping centered alignment.
+- Preserved synchronized Best for and Available packaging row positions across all three Product Details cards.
+- Cache-busting updated to v11.
