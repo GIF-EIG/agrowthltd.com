@@ -991,3 +991,30 @@
   }
   .product-detail .detail-best li::marker{content:""!important}
 }
+
+/* ===== V12 final spacing refinements (2026-11-10) ===== */
+/* Our Business: create a visibly larger gap between the product image and product name.
+   Use spacing on the text block itself so the fixed image grid track cannot swallow the margin. */
+@media(min-width:1181px){
+  .business-products .business-detail-card{
+    grid-template-rows:auto 300px 150px 1fr!important;
+  }
+  .business-products .business-detail-card>img{
+    margin-bottom:0!important;
+  }
+  .business-products .business-product-main{
+    padding:24px 8px 0!important;
+    height:150px!important;
+  }
+}
+
+/* Product Details: increase the description-to-Best-for breathing room,
+   while keeping Best for aligned across all three cards. */
+@media(min-width:1181px){
+  .product-detail-copy{
+    grid-template-rows:238px 145px auto!important;
+  }
+  .product-detail .detail-best h4{
+    margin:8px 0 4px!important;
+  }
+}
