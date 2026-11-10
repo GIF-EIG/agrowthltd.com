@@ -14,3 +14,6 @@ V8: Final Our Business card refinement; cache-bust query updated to v=8.
 - Product detail cards center Product 01/02/03, product names, Available packaging and package-size pills.
 - Product detail vertical gaps are tightened while Best for and Available packaging stay aligned across cards.
 - Cache-busting updated to v9.
+
+
+V10 update: final product-card centering/alignment, revised Best for copy, shortened fortified description, mission icon position, field headings, and image/title spacing.
