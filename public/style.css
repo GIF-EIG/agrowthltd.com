@@ -1008,13 +1008,14 @@
   }
 }
 
-/* Product Details: increase the description-to-Best-for breathing room,
-   while keeping Best for aligned across all three cards. */
+/* Product Details: slightly tighten the description-to-Best-for gap,
+   aiming for a spacing closer to the Best for-to-packaging rhythm while
+   preserving the aligned Best for row across all three cards. */
 @media(min-width:1181px){
   .product-detail-copy{
-    grid-template-rows:238px 145px auto!important;
+    grid-template-rows:220px 145px auto!important;
   }
   .product-detail .detail-best h4{
-    margin:8px 0 4px!important;
+    margin:6px 0 4px!important;
   }
 }
