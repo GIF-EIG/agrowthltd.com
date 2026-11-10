@@ -815,3 +815,106 @@
   .product-detail-copy{display:flex!important}
   .product-detail .detail-pack{margin-top:auto!important}
 }
+
+
+/* ===== V10 final refinements (2026-11-10) ===== */
+/* Mission: move only the corn icon slightly upward while preserving the title/body positions. */
+.mission-icon{transform:translateY(-10px)!important}
+
+/* From Field to Flour: equal-size headings, enlarged as much as practical while staying on one line at desktop. */
+@media(min-width:1181px){
+  .field-cols h3{
+    font-size:clamp(24px,2vw,34px)!important;
+    line-height:1.16!important;
+    white-space:nowrap!important;
+    letter-spacing:-.55px!important;
+  }
+}
+
+/* Our Business: add a little more air between each product image and its title. */
+@media(min-width:1181px){
+  .business-products .business-detail-card>img{margin-bottom:44px!important}
+}
+
+/* Product Details: fully centered card content with synchronized internal rows. */
+@media(min-width:1181px){
+  .product-detail{
+    text-align:center!important;
+  }
+  .product-detail>h3{
+    text-align:center!important;
+    margin:0 0 12px!important;
+  }
+  .product-detail img{
+    margin-bottom:0!important;
+  }
+  .product-detail-copy{
+    display:grid!important;
+    grid-template-rows:280px 190px auto!important;
+    flex:1!important;
+    width:100%!important;
+  }
+  .product-detail .detail-main,
+  .product-detail .detail-best,
+  .product-detail .detail-pack{
+    text-align:center!important;
+    min-height:0!important;
+  }
+  .product-detail .detail-main h4{
+    text-align:center!important;
+    margin:26px 0 7px!important;
+  }
+  .product-detail .detail-main p{
+    text-align:center!important;
+    margin:0 auto!important;
+    max-width:96%!important;
+  }
+  .product-detail .detail-best{
+    display:flex!important;
+    flex-direction:column!important;
+    justify-content:flex-start!important;
+  }
+  .product-detail .detail-best h4{
+    text-align:center!important;
+    margin:8px 0 6px!important;
+  }
+  .product-detail .detail-best ul{
+    list-style-position:inside!important;
+    padding:0!important;
+    margin:0 auto!important;
+    text-align:center!important;
+    width:100%!important;
+  }
+  .product-detail .detail-best li{
+    text-align:center!important;
+    margin:0 0 2px!important;
+    padding:0!important;
+  }
+  .product-detail .detail-pack{
+    align-self:end!important;
+    width:100%!important;
+  }
+  .product-detail .detail-pack h4{
+    text-align:center!important;
+    margin:8px 0 8px!important;
+  }
+  .product-detail .packaging-pills{
+    justify-content:center!important;
+    margin:0!important;
+    padding:0!important;
+  }
+}
+
+@media(max-width:1180px){
+  .field-cols h3{white-space:normal!important}
+  .product-detail-copy{display:flex!important;flex-direction:column!important}
+  .product-detail .detail-main p,
+  .product-detail .detail-best,
+  .product-detail .detail-best h4,
+  .product-detail .detail-best ul,
+  .product-detail .detail-best li,
+  .product-detail .detail-pack,
+  .product-detail .detail-pack h4{text-align:center!important}
+  .product-detail .detail-best ul{list-style-position:inside!important;padding-left:0!important}
+  .product-detail .detail-pack{margin-top:26px!important}
+}
