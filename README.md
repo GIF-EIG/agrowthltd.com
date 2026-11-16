@@ -24,3 +24,11 @@ V10 update: final product-card centering/alignment, revised Best for copy, short
 - Removed bullet markers from all Product Details Best for lists while keeping centered alignment.
 - Preserved synchronized Best for and Available packaging row positions across all three Product Details cards.
 - Cache-busting updated to v11.
+
+## V12 refinements
+- Our Business: visibly increased product-image-to-title spacing by adding top spacing to the product text block rather than relying on image margin inside a fixed CSS grid row.
+- Product Details: increased the description-to-Best-for gap while keeping all three Best for rows synchronized.
+- Cache-busting updated to v12.
+
+
+SEO V14: canonical domain updated to https://agrowthltd.com; unique titles/descriptions; Open Graph/Twitter cards; Organization/WebSite/Product/Article JSON-LD; sitemap/robots updated; natural kawunga (maize meal) mention added to Product page.
