@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://agrowthltd.com/sitemap.xml
+Sitemap: https://agrowth.rw/sitemap.xml
