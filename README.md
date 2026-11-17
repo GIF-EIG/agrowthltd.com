@@ -31,4 +31,4 @@ V10 update: final product-card centering/alignment, revised Best for copy, short
 - Cache-busting updated to v12.
 
 
-SEO V14: canonical domain updated to https://agrowthltd.com; unique titles/descriptions; Open Graph/Twitter cards; Organization/WebSite/Product/Article JSON-LD; sitemap/robots updated; natural kawunga (maize meal) mention added to Product page.
+SEO V15: canonical domain updated to https://agrowth.rw; unique titles/descriptions; Open Graph/Twitter cards; Organization/WebSite/Product/Article JSON-LD; sitemap/robots updated; natural kawunga (maize meal) mention added to Product page.
