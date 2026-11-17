@@ -38,3 +38,6 @@ SEO V15: canonical domain updated to https://agrowth.rw; unique titles/descripti
 - Removed the three Product JSON-LD nodes from product.html to eliminate Google Product snippet errors requiring offers/review/aggregateRating.
 - Kept Organization, WebSite and ItemList structured data.
 - No visual design, page copy, canonical, sitemap or robots changes.
+
+
+V17 SEO URL normalization: canonical, OG, JSON-LD, sitemap and internal links now use extensionless production routes on https://agrowth.rw. Physical .html files remain for deployment.
