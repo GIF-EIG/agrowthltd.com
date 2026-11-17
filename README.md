@@ -32,3 +32,9 @@ V10 update: final product-card centering/alignment, revised Best for copy, short
 
 
 SEO V15: canonical domain updated to https://agrowth.rw; unique titles/descriptions; Open Graph/Twitter cards; Organization/WebSite/Product/Article JSON-LD; sitemap/robots updated; natural kawunga (maize meal) mention added to Product page.
+
+
+## V16 SEO structured-data fix
+- Removed the three Product JSON-LD nodes from product.html to eliminate Google Product snippet errors requiring offers/review/aggregateRating.
+- Kept Organization, WebSite and ItemList structured data.
+- No visual design, page copy, canonical, sitemap or robots changes.
