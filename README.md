@@ -41,3 +41,9 @@ SEO V15: canonical domain updated to https://agrowth.rw; unique titles/descripti
 
 
 V17 SEO URL normalization: canonical, OG, JSON-LD, sitemap and internal links now use extensionless production routes on https://agrowth.rw. Physical .html files remain for deployment.
+
+
+## V19 (2026-11-19)
+- Product page only: tightened the vertical gap between the Best for list and Available packaging.
+- Preserved aligned Best for / Available packaging rows across all three product cards.
+- Preserved V18 Whole Grain description and all V17 clean-URL/SEO settings.
