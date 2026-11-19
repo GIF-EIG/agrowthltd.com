@@ -1019,3 +1019,49 @@
     margin:6px 0 4px!important;
   }
 }
+
+
+/* ===== V18 Product Details alignment refinement (2026-11-19) =====
+   Keep Best for and Available packaging on the same horizontal lines across
+   all three cards, while preserving a balanced visual gap between groups. */
+@media(min-width:1181px){
+  .product-detail-copy{
+    display:grid!important;
+    grid-template-rows:232px 150px auto!important;
+    row-gap:18px!important;
+    flex:1!important;
+    width:100%!important;
+  }
+  .product-detail .detail-main,
+  .product-detail .detail-best,
+  .product-detail .detail-pack{
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  .product-detail .detail-main h4{
+    margin:26px 0 6px!important;
+  }
+  .product-detail .detail-main p{
+    margin:0 auto!important;
+  }
+  .product-detail .detail-best{
+    display:flex!important;
+    flex-direction:column!important;
+    justify-content:flex-start!important;
+  }
+  .product-detail .detail-best h4{
+    margin:0 0 6px!important;
+  }
+  .product-detail .detail-best ul{
+    margin:0 auto!important;
+    padding:0!important;
+  }
+  .product-detail .detail-pack{
+    align-self:start!important;
+    width:100%!important;
+  }
+  .product-detail .detail-pack h4{
+    margin:0 0 8px!important;
+  }
+}
