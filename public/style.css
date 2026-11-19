@@ -1027,8 +1027,8 @@
 @media(min-width:1181px){
   .product-detail-copy{
     display:grid!important;
-    grid-template-rows:232px 150px auto!important;
-    row-gap:18px!important;
+    grid-template-rows:232px 145px auto!important;
+    row-gap:0!important;
     flex:1!important;
     width:100%!important;
   }
