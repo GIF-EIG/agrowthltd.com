@@ -1065,3 +1065,15 @@
     margin:0 0 8px!important;
   }
 }
+
+/* ===== V20 Product Details balanced group spacing (2026-11-19) =====
+   Restore the comfortable V18 gap between the description and Best for,
+   while matching that rhythm between the Best for list and Available packaging.
+   The middle row is sized to the actual three-line Best for content instead of
+   reserving excess blank height. */
+@media(min-width:1181px){
+  .product-detail-copy{
+    grid-template-rows:232px 122px auto!important;
+    row-gap:18px!important;
+  }
+}
